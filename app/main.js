@@ -1,7 +1,13 @@
 import App from "./lib/App";
 import API from "./lib/API";
 import Router from "./lib/Router";
-import { filmTemplate } from "./views/film";
+// Templates: TODO refactor into Components
+import { filmTemplate } from "./views/templates";
+
+// Components that have MVC attached:
+import Root from "./components/Root";
+
+// Middleware:
 const app = new App("#app");
 const api = new API();
 
@@ -9,6 +15,7 @@ const api = new API();
  * Creates a Component, This example is going to be for Films.
  * It takes in a model, what view you need, as well as the controller
  */
+// TODO refactor these components into separate file like Root
 app.addComponent({
   name: "films",
   model: {
@@ -47,7 +54,10 @@ app.addComponent({
   }
 });
 
+app.addComponent(Root);
+
 // Routes in App:
 const router = new Router(app);
 router.addRoute("films", `^#/films$`);
 router.addRoute("film", `^#/film/([0-9]*)$`);
+router.addRoute("root", "");

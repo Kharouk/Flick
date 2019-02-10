@@ -24,7 +24,7 @@ export default class App {
   showComponent(name) {
     this.currentComponent = this.componentsByName[name];
 
-    if (this.currentComponent) {
+    if (this.currentComponent && this.currentComponent.controller) {
       this.currentComponent.controller(this.currentComponent.model);
     }
     this.updateView();
@@ -36,7 +36,7 @@ export default class App {
         this.currentComponent.model
       );
     } else {
-      this.appElement.innerHTML = `<h1>Not Found</h1>`;
+      this.appElement.innerHTML = `<h1>An Error has occured</h1>`;
     }
   }
 }
