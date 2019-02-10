@@ -6,7 +6,6 @@ export default class Router {
 
     window.addEventListener("hashchange", this.hashChange);
     window.addEventListener("DOMContentLoaded", this.hashChange);
-    console.log(app);
   }
 
   addRoute(name, url) {
@@ -22,6 +21,7 @@ export default class Router {
     )[0];
     if (route) {
       this.params = new RegExp(route.url).exec(hash);
+      console.log(this.params);
       this.app.showComponent(route.name);
     } else {
       this.app.showComponent();

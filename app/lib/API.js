@@ -13,7 +13,7 @@ export default class API {
         return res.json();
       })
       .then(result => {
-        return result.films[id];
+        return result.films[id - 1];
       });
   }
 }

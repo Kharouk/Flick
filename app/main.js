@@ -41,7 +41,7 @@ app.addComponent({
     return filmTemplate(model.film);
   },
   controller(model) {
-    api.getFilm(1).then(result => {
+    api.getFilm(router.params[1]).then(result => {
       model.film = result;
     });
   }

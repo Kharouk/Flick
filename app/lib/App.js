@@ -8,7 +8,7 @@ export default class App {
     const self = this;
     return new Proxy(model, {
       set(target, property, value) {
-        console.log(`Changing ${property} from`, target[property], `to`, value);
+        // console.log(`Changing ${property} from`, target[property], `to`, value);
         target[property] = value;
         self.updateView();
         return true;
