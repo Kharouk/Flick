@@ -1,7 +1,7 @@
 import App from "./lib/App";
 import API from "./lib/API";
 import Router from "./lib/Router";
-
+import { filmTemplate } from "./views/film";
 const app = new App("#app");
 const api = new API();
 
@@ -11,7 +11,15 @@ app.addComponent({
     films: []
   },
   view(model) {
-    return `There are ${model.films.length} films.`;
+    const filmsHTML = model.films.reduce(
+      (html, film) => html + `<li>${filmTemplate(film)}</li>`,
+      ""
+    );
+    return `
+    <ul class="films">
+      ${filmsHTML}
+    </ul>
+    `;
   },
   controller(model) {
     api.getFilms().then(result => {
