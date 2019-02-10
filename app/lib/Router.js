@@ -21,7 +21,6 @@ export default class Router {
     )[0];
     if (route) {
       this.params = new RegExp(route.url).exec(hash);
-      console.log(this.params);
       this.app.showComponent(route.name);
     } else {
       this.app.showComponent();
