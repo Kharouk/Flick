@@ -36,7 +36,7 @@ export default class App {
         this.currentComponent.model
       );
     } else {
-      this.appElement.innerHTML = `<h3>Not Found</h3>`;
+      this.appElement.innerHTML = `<h1>Not Found</h1>`;
     }
   }
 }

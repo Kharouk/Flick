@@ -5,6 +5,10 @@ import { filmTemplate } from "./views/film";
 const app = new App("#app");
 const api = new API();
 
+/*
+ * Creates a Component, This example is going to be for Films.
+ * It takes in a model, what view you need, as well as the controller
+ */
 app.addComponent({
   name: "films",
   model: {
@@ -28,7 +32,22 @@ app.addComponent({
   }
 });
 
+app.addComponent({
+  name: "film",
+  model: {
+    film: {}
+  },
+  view(model) {
+    return filmTemplate(model.film);
+  },
+  controller(model) {
+    api.getFilm(1).then(result => {
+      model.film = result;
+    });
+  }
+});
+
 // Routes in App:
 const router = new Router(app);
 router.addRoute("films", `^#/films$`);
-router.addRoute("shows", `^#/shows$`);
+router.addRoute("film", `^#/film/([0-9]*)$`);
