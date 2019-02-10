@@ -6,6 +6,7 @@ export default class Router {
 
     window.addEventListener("hashchange", this.hashChange);
     window.addEventListener("DOMContentLoaded", this.hashChange);
+    console.log(app);
   }
 
   addRoute(name, url) {
@@ -14,13 +15,11 @@ export default class Router {
       url
     });
   }
-
   hashChange() {
     const hash = window.location.hash;
-    const route = this.routes.filter(route => {
-      return hash.match(new RegExp(route.url));
-    })[0];
-
+    const route = this.routes.filter(route =>
+      hash.match(new RegExp(route.url))
+    )[0];
     if (route) {
       this.params = new RegExp(route.url).exec(hash);
       this.app.showComponent(route.name);

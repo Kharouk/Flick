@@ -13,17 +13,7 @@ app.addComponent({
   }
 });
 
-app.addComponent({
-  name: "shows",
-  model: {
-    shows: []
-  },
-  view(model) {
-    return `There are ${model.shows.length} shows.`;
-  }
-});
-
+// Routes in App:
 const router = new Router(app);
-
 router.addRoute("films", `^#/films$`);
 router.addRoute("shows", `^#/shows$`);
