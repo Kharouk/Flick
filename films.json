@@ -1,0 +1,25 @@
+{
+  "films": [
+    {
+      "id": 1,
+      "title": "Interstellar",
+      "description": "A fantastic representation on why bookcases are still relevant and can save the future.",
+      "poster": "https://upload.wikimedia.org/wikipedia/en/b/bc/Interstellar_film_poster.jpg",
+      "tagline": "The End of Earth will not be the End of Us."
+    },
+    {
+      "id": 2,
+      "title": "Swiss Army Man",
+      "description": "Suicide is never the answer. Taking care of a dead body that was a magician and is now fully capable of being a naturalised version of a go-go gadget is, however.",
+      "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/Swiss_Army_Man_poster.png/220px-Swiss_Army_Man_poster.png",
+      "tagline": "The First Fart will make you laugh, the Last Fart will make you cry."
+    },
+    {
+      "id": 3,
+      "title": "Halloween (1978)",
+      "description": "What's more sinful than murder? Having sex before you're 18! Watch out, Ol' Michael Myers is out there, proving abstinence is the only way you'll stay alive. 100% Safe!",
+      "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/a/af/Halloween_%281978%29_theatrical_poster.jpg/220px-Halloween_%281978%29_theatrical_poster.jpg",
+      "tagline": "The night He came home!"
+    }
+  ]
+}

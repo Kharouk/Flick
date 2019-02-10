@@ -1,7 +1,9 @@
 import App from "./lib/App";
+import API from "./lib/API";
 import Router from "./lib/Router";
 
 const app = new App("#app");
+const api = new API();
 
 app.addComponent({
   name: "films",
@@ -10,6 +12,11 @@ app.addComponent({
   },
   view(model) {
     return `There are ${model.films.length} films.`;
+  },
+  controller(model) {
+    api.getFilms().then(result => {
+      model.films = result.films;
+    });
   }
 });
 
